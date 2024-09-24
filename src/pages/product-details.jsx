@@ -132,7 +132,8 @@ const ProductDetails = () => {
                                 <Typography id="recipe-title" variant='h1' fontSize={32} color='warning' gutterBottom>
                                     {recipe.name}
                                 </Typography>
-                                <List role="region" aria-label="Diet tags" style={{ display: 'flex', flexWrap: 'wrap', padding: 0, listStyle: 'none', gap: "0.5rem" }}>
+                                <List role="region" aria-label="Diet tags" 
+                                    sx={{ display: 'flex', flexWrap: 'wrap', padding: 0, listStyle: 'none', gap: "0.5rem", justifyContent : { xs : "center", md : "flex-start" } }}>
                                     {Array.from(recipe.diets).length > 0 && Array.from(recipe.diets).map((item, index) => (
                                         <ListItem key={index} style={{ width : "fit-content", padding : 0 }}>
                                             <Chip label={item} color="primary" style={{ textTransform: "capitalize" }} />
@@ -141,7 +142,7 @@ const ProductDetails = () => {
                                 </List>
                             </Grid>
                             <Grid item='true' xs={12} md={4}>
-                                <img src={recipe.image} alt={recipe.title} style={{ width: "100%", maxWidth:"400px", borderRadius: 10}} />
+                                <img src={recipe.image} alt={recipe.name} style={{ width: "100%", maxWidth:"400px", borderRadius: 10}} />
                             </Grid>
                         </Grid>   
                     </header> 
